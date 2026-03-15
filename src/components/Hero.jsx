@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParallax } from "../hooks/useScrollAnimation.js";
 import img from "../../src/public/mehedi.png";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -162,7 +163,22 @@ export default function Hero() {
           }}
         >
           <span style={{ color: "var(--purple-light)" }}>&lt;</span>
-          Frontend Developer
+          <p className="text-sm md:text-sm mb-4 text-cyan-300">
+              <Typewriter
+              words={[
+                "Frontend-Focused MERN Developer",
+                "React & Tailwind Specialist",
+                "Building Scalable Web Interfaces",
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={120}
+              deleteSpeed={50}
+              delaySpeed={1500}
+            />
+          </p>
+          {/* Frontend Developer */}
           <span style={{ color: "var(--purple-light)" }}>/&gt;</span>
         </div>
 
@@ -227,7 +243,8 @@ export default function Hero() {
         >
           {/* Review CV — opens inline / new tab */}
           <a
-            href="cv.pdf"
+            href = '/resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
+            // href="cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -280,8 +297,10 @@ export default function Hero() {
 
           {/* Download CV */}
           <a
-            href="cv.pdf"
-            download="Mehedi_Hasan_CV.pdf"
+             href = '/resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
+             download = 'resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
+             // href="cv.pdf"
+             // download="Mehedi_Hasan_CV.pdf"
             style={{
               display: "inline-flex",
               alignItems: "center",

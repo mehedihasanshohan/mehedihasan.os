@@ -237,8 +237,10 @@ const COMMANDS = {
     ],
     action: () => {
       const a = document.createElement('a')
-      a.href = 'cv.pdf'
-      a.download = 'Mehedi_Hasan_CV.pdf'
+      // a.href = 'cv.pdf'
+      // a.download = 'Mehedi_Hasan_CV.pdf'
+      a.href = '/resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
+      a.download = 'resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
       a.click()
     },
   },
