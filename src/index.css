@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
 
-/* ===== THEME VARIABLES ===== */
 :root[data-theme="dark"] {
   --bg: #0B0F19;
   --bg2: #0E1420;
@@ -60,14 +59,10 @@ body {
   transition: background 0.4s, color 0.4s;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg2); }
 ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
 
-/* cursor styles handled inline in Cursor.jsx */
-
-/* ===== SCROLL PROGRESS ===== */
 .scroll-bar {
   position: fixed;
   top: 0; left: 0;
@@ -87,7 +82,6 @@ body {
   opacity: 0.7;
 }
 
-/* ===== NAV ===== */
 .nav {
   position: fixed;
   top: 18px; left: 50%;
@@ -128,7 +122,6 @@ body {
 }
 .nav-theme-btn:hover { border-color: var(--cyan); color: var(--cyan); }
 
-/* ===== TREE NAV ===== */
 .tree-nav {
   position: fixed;
   left: 28px; top: 50%;
@@ -168,7 +161,6 @@ body {
 .tree-node-link:hover .tree-dot { border-color: var(--cyan); box-shadow: var(--glow-cyan); background: rgba(0,245,255,0.15); }
 .tree-node-link:hover .tree-label { opacity: 1; transform: translateX(0); color: var(--cyan); }
 
-/* ===== SECTION SHARED ===== */
 .section-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -203,7 +195,6 @@ body {
   background: linear-gradient(90deg, var(--border), transparent);
 }
 
-/* ===== REVEAL ANIMATIONS ===== */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -223,7 +214,6 @@ body {
 }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-/* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -262,7 +252,6 @@ body {
 }
 .btn-ghost:hover { border-color: var(--border); color: var(--text2); }
 
-/* ===== GLASSMORPHISM CARD ===== */
 .glass-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -276,7 +265,6 @@ body {
   box-shadow: var(--card-shadow), var(--glow-cyan);
 }
 
-/* Scrollbar on light mode */
 :root[data-theme="light"] ::-webkit-scrollbar-track { background: #E8EEFF; }
 :root[data-theme="light"] ::-webkit-scrollbar-thumb { background: #006ECC; }
 
@@ -286,7 +274,6 @@ body {
   .section-container { padding: 80px 20px; }
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
   .tree-nav { display: none !important; }
 
@@ -321,7 +308,6 @@ body {
   }
 }
 
-/* ===== LIGHT MODE OVERRIDES ===== */
 [data-theme="light"] .glass-card {
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
@@ -329,7 +315,6 @@ body {
   box-shadow: 0 12px 40px rgba(0,110,204,0.15);
 }
 
-/* ===== SELECTION ===== */
 ::selection {
   background: rgba(0,245,255,0.2);
   color: var(--text);

@@ -3,12 +3,7 @@ import { useRef, useState } from "react";
 import { useScrollProgress, mapRange } from "../hooks/useScrollAnimation.js";
 import { useMediaQuery } from "../hooks/useMediaQuery.js";
 
-// const timeline = [
-//   { year:'2019', title:'Discovered Programming', desc:'Started with HTML & CSS, fell in love with the idea of building things for the web. Stayed up too many nights experimenting with layouts and colors.' },
-//   { year:'2021', title:'First JavaScript Project', desc:'Built a weather app that actually worked. Learned APIs, async/await, and why DOM manipulation gets messy fast. JavaScript clicked.' },
-//   { year:'2023', title:'Started Working with React', desc:'React changed everything. Component thinking, declarative UI, the ecosystem — built 10+ projects, explored TypeScript, Redux, React Query.' },
-//   { year:'2025', title:'React Internals & Performance', desc:'Diving deep: Fiber reconciler, concurrent rendering, memoization strategies, custom hooks architecture, and building tools that inspire other developers.' },
-// ]
+
 const timeline = [
   {
     year: "2017",
@@ -252,3 +247,18 @@ export default function About() {
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

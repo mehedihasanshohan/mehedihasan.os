@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParallax } from "../hooks/useScrollAnimation.js";
 import img from "../../src/public/mehedi.png";
 import { Typewriter } from "react-simple-typewriter";
+import Sociallinks from "./Sociallinks.jsx";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
@@ -13,6 +14,26 @@ export default function Hero() {
     const t = setTimeout(() => setVisible(true), 200);
     return () => clearTimeout(t);
   }, []);
+
+  const links = [
+    {
+      label: "GitHub",
+      icon: "/github.png",
+      url: "https://github.com/mehedihasanshohan",
+      external: true,
+    },
+    {
+      label: "LinkedIn",
+      icon: "/linkedin.png",
+      url: "https://linkedin.com/in/mehedihasanshohan",
+      external: true,
+    },
+    {
+      label: "Email",
+      icon: "/gmail.png",
+      url: "mailto:mhshohan04@gmail.com?subject=Portfolio Inquiry",
+      external: false },
+  ];
 
   return (
     <section
@@ -152,9 +173,9 @@ export default function Hero() {
         {/* Role */}
         <div
           style={{
-            fontSize: 11,
+            fontSize: 14,
             color: "var(--cyan)",
-            letterSpacing: 5,
+            letterSpacing: 2,
             textTransform: "uppercase",
             marginBottom: 22,
             display: "flex",
@@ -163,8 +184,8 @@ export default function Hero() {
           }}
         >
           <span style={{ color: "var(--purple-light)" }}>&lt;</span>
-          <p className="text-sm md:text-sm mb-4 text-cyan-300">
-              <Typewriter
+          <p className="text-md md:text-md lg:text-lg mb-4 text-cyan-300">
+            <Typewriter
               words={[
                 "Frontend-Focused MERN Developer",
                 "React & Tailwind Specialist",
@@ -173,7 +194,7 @@ export default function Hero() {
               loop={0}
               cursor
               cursorStyle="_"
-              typeSpeed={120}
+              typeSpeed={130}
               deleteSpeed={50}
               delaySpeed={1500}
             />
@@ -191,7 +212,7 @@ export default function Hero() {
             maxWidth: 460,
             lineHeight: 1.85,
             fontWeight: 300,
-            marginBottom: 44,
+            marginBottom: 14,
             fontStyle: "italic",
           }}
         >
@@ -243,7 +264,7 @@ export default function Hero() {
         >
           {/* Review CV — opens inline / new tab */}
           <a
-            href = '/resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
+            href="/resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf"
             // href="cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -297,10 +318,10 @@ export default function Hero() {
 
           {/* Download CV */}
           <a
-             href = '/resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
-             download = 'resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf'
-             // href="cv.pdf"
-             // download="Mehedi_Hasan_CV.pdf"
+            href="/resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf"
+            download="resume_Mehedi_Hasan_Frontend_Developer_mernstack.pdf"
+            // href="cv.pdf"
+            // download="Mehedi_Hasan_CV.pdf"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -351,7 +372,7 @@ export default function Hero() {
         </div>
 
         {/* Social */}
-        <div
+        {/* <div
           style={{
             display: "flex",
             gap: 28,
@@ -359,14 +380,13 @@ export default function Hero() {
             marginBottom: 40,
           }}
         >
-          {[
-            ["GitHub", "⌂"],
-            ["LinkedIn", "⬡"],
-            ["Resume", "⌥"],
-          ].map(([label, icon]) => (
+          {links.map(({ label, icon, url, external }) => (
             <a
               key={label}
-              href="#"
+              href={url}
+              // target={label === "Email" ? "_self" : "_blank"}
+                target={label !== "Email" ? "_blank" : undefined}
+              rel="noopener noreferrer"
               style={{
                 color: "var(--muted)",
                 textDecoration: "none",
@@ -376,6 +396,8 @@ export default function Hero() {
                 alignItems: "center",
                 gap: 6,
                 transition: "color 0.25s",
+                position: "relative",
+                zIndex: 50,
               }}
               onMouseEnter={(e) =>
                 (e.currentTarget.style.color = "var(--cyan)")
@@ -384,11 +406,12 @@ export default function Hero() {
                 (e.currentTarget.style.color = "var(--muted)")
               }
             >
-              <span style={{ fontSize: 14 }}>{icon}</span>
-              {label}
+              <img src={icon} alt={label} style={{ width: 14, height: 14 , pointerEvents: "none"} }  />
+              <span style={{ fontSize: 14, marginLeft: 4 }}>{label}</span>
             </a>
           ))}
-        </div>
+        </div> */}
+        <Sociallinks></Sociallinks>
 
         {/* Cmd hint */}
         <div
