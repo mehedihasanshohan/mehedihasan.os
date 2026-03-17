@@ -1152,7 +1152,7 @@ export default function Projects() {
                         </div>
                         <div style={{
                           fontFamily: 'Orbitron, sans-serif',
-                          fontSize: isActive ? 'clamp(15px,2vw,20px)' : 'clamp(13px,1.5vw,16px)',
+                          fontSize: isActive ? 'clamp(18px,2vw,24px)' : 'clamp(13px,1.5vw,16px)',
                           fontWeight: 900, letterSpacing: 1,
                           color: isActive ? 'var(--text)' : 'var(--text2)',
                           transition: 'all 0.4s', wordBreak: 'break-word',
@@ -1169,7 +1169,7 @@ export default function Projects() {
                     </div>
 
                     <div style={{
-                      fontSize: 11, color: p.color, fontStyle: 'italic',
+                      fontSize: 13, color: p.color, fontStyle: 'italic',
                       opacity: isActive ? 0.9 : 0.3, marginBottom: 14,
                       transition: 'opacity 0.4s', lineHeight: 1.5,
                       display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden',
@@ -1178,7 +1178,7 @@ export default function Projects() {
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 5, marginTop: 'auto' }}>
                       {p.tech.slice(0, 4).map(t => (
                         <span key={t} style={{
-                          fontSize: 8, padding: '2px 7px', borderRadius: 2,
+                          fontSize: 10, padding: '2px 7px', borderRadius: 2,
                           color: isActive ? p.color : 'var(--muted)',
                           border: `1px solid ${isActive ? p.color + '40' : 'var(--border)'}`,
                           background: isActive ? `${p.color}0A` : 'transparent',
@@ -1219,19 +1219,19 @@ export default function Projects() {
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               backgroundClip: 'text', marginBottom: 8, lineHeight: 1.1, wordBreak: 'break-word',
             }}>{active.name}</h3>
-            <div style={{ fontSize: 12, color: active.color, fontStyle: 'italic', letterSpacing: 0.5, marginBottom: 16, opacity: 0.85 }}>{active.tagline}</div>
-            <div style={{ marginBottom: 4 }}>
-              <div style={{ fontSize: 8, color: 'var(--muted)', letterSpacing: 3, marginBottom: 6, opacity: 0.5 }}>THE PROBLEM</div>
-              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 13, color: 'var(--muted)', lineHeight: 1.75 }}>{active.problem}</p>
-            </div>
+            <div style={{ fontSize: 16, color: active.color, fontStyle: 'italic', letterSpacing: 0.5, marginBottom: 16, opacity: 0.85 }}>{active.tagline}</div>
+            {/* <div style={{ marginBottom: 4 }}>
+              <div style={{ fontSize: 12, color: 'var(--muted)', letterSpacing: 3, marginBottom: 6, opacity: 0.5 }}>THE PROBLEM</div>
+              <p style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, color: 'var(--muted)', lineHeight: 1.75 }}>{active.problem}</p>
+            </div> */}
             <div style={{ height: 1, margin: '14px 0', background: `linear-gradient(90deg, ${active.color}30, transparent)` }} />
             <div style={{ marginBottom: 16 }}>
-              <div style={{ fontSize: 8, color: 'var(--muted)', letterSpacing: 3, marginBottom: 10, opacity: 0.5 }}>KEY FEATURES</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)', letterSpacing: 3, marginBottom: 10, opacity: 0.5 }}>KEY FEATURES</div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                 {active.features.slice(0, 4).map((f, fi) => (
                   <div key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, animation: `featureIn 0.4s cubic-bezier(0.16,1,0.3,1) ${fi * 55}ms both` }}>
-                    <span style={{ color: active.color, fontSize: 10, flexShrink: 0, marginTop: 3 }}>◈</span>
-                    <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 12, color: 'var(--muted)', lineHeight: 1.6 }}>{f}</span>
+                    <span style={{ color: active.color, fontSize: 14, flexShrink: 0, marginTop: 3 }}>◈</span>
+                    <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 14, color: 'var(--muted)', lineHeight: 1.6 }}>{f}</span>
                   </div>
                 ))}
               </div>
@@ -1239,7 +1239,7 @@ export default function Projects() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 20 }}>
               {active.tech.map((t, ti) => (
                 <span key={t} style={{
-                  fontSize: 9, padding: '3px 9px', borderRadius: 2,
+                  fontSize: 12, padding: '3px 9px', borderRadius: 2,
                   color: active.color, border: `1px solid ${active.color}40`,
                   background: `${active.color}0A`,
                   animation: `techIn 0.35s ease ${ti * 35}ms both`,
@@ -1247,7 +1247,7 @@ export default function Projects() {
                 }}>{t}</span>
               ))}
             </div>
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {/* <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
               <a href={active.liveUrl} style={{ fontSize: 10, letterSpacing: 1.5, padding: '8px 20px', borderRadius: 3, background: `${active.color}15`, border: `1px solid ${active.color}55`, color: active.color, textDecoration: 'none', fontFamily: 'JetBrains Mono, monospace', whiteSpace: 'nowrap', transition: 'all 0.25s' }}
                 onMouseEnter={e => { e.currentTarget.style.background = `${active.color}28`; e.currentTarget.style.boxShadow = `0 0 16px ${active.color}33` }}
                 onMouseLeave={e => { e.currentTarget.style.background = `${active.color}15`; e.currentTarget.style.boxShadow = 'none' }}>◈ LIVE DEMO</a>
@@ -1257,7 +1257,67 @@ export default function Projects() {
               <a href={active.githubUrl} style={{ fontSize: 10, letterSpacing: 1.5, padding: '8px 20px', borderRadius: 3, background: 'transparent', border: '1px solid var(--border2)', color: 'var(--muted)', textDecoration: 'none', fontFamily: 'JetBrains Mono, monospace', whiteSpace: 'nowrap', transition: 'all 0.25s' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.color = 'var(--text2)' }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--muted)' }}>⌂ GITHUB</a>
-            </div>
+            </div> */}
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+  <a
+    href={active.liveUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      fontSize: 12, letterSpacing: 1.5, padding: '8px 20px', borderRadius: 3,
+      background: `${active.color}15`, border: `1px solid ${active.color}55`,
+      color: active.color, textDecoration: 'none', fontFamily: 'JetBrains Mono, monospace',
+      whiteSpace: 'nowrap', transition: 'all 0.25s'
+    }}
+    onMouseEnter={e => {
+      e.currentTarget.style.background = `${active.color}28`;
+      e.currentTarget.style.boxShadow = `0 0 16px ${active.color}33`
+    }}
+    onMouseLeave={e => {
+      e.currentTarget.style.background = `${active.color}15`;
+      e.currentTarget.style.boxShadow = 'none'
+    }}
+  >
+    ◈ LIVE DEMO
+  </a>
+
+  <Link
+    to={`/projects/${active.id}`}
+    style={{
+      fontSize: 12, letterSpacing: 1.5, padding: '8px 20px', borderRadius: 3,
+      background: 'var(--purple-dim)', border: '1px solid rgba(124,58,237,0.35)',
+      color: 'var(--purple-light)', textDecoration: 'none', fontFamily: 'JetBrains Mono, monospace',
+      whiteSpace: 'nowrap', transition: 'all 0.25s'
+    }}
+    onMouseEnter={e => e.currentTarget.style.boxShadow = 'var(--glow-purple)'}
+    onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}
+  >
+    ⌥ CASE STUDY
+  </Link>
+
+  <a
+    href={active.githubUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    onClick={(e) => !active.githubUrl && e.preventDefault()}
+    style={{
+      fontSize: 12, letterSpacing: 1.5, padding: '8px 20px', borderRadius: 3,
+      background: 'transparent', border: '1px solid var(--border2)',
+      color: 'var(--muted)', textDecoration: 'none', fontFamily: 'JetBrains Mono, monospace',
+      whiteSpace: 'nowrap', transition: 'all 0.25s'
+    }}
+    onMouseEnter={e => {
+      e.currentTarget.style.borderColor = 'var(--border)';
+      e.currentTarget.style.color = 'var(--text2)'
+    }}
+    onMouseLeave={e => {
+      e.currentTarget.style.borderColor = 'var(--border2)';
+      e.currentTarget.style.color = 'var(--muted)'
+    }}
+  >
+    ⌂ GITHUB
+  </a>
+</div>
           </div>
         </div>
 

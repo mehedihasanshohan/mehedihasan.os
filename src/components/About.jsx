@@ -81,7 +81,7 @@ export default function About() {
             <p
               style={{
                 fontFamily: "Inter,sans-serif",
-                fontSize: 15,
+                fontSize: 18,
                 color: "var(--muted)",
                 lineHeight: 1.9,
                 marginBottom: 20,
@@ -96,7 +96,7 @@ export default function About() {
             <p
               style={{
                 fontFamily: "Inter,sans-serif",
-                fontSize: 15,
+                fontSize: 18,
                 color: "var(--muted)",
                 lineHeight: 1.9,
               }}
@@ -188,7 +188,7 @@ export default function About() {
                   />
                   <div
                     style={{
-                      fontSize: 10,
+                      fontSize: 16,
                       color: "var(--cyan)",
                       letterSpacing: 3,
                       marginBottom: 5,
@@ -199,7 +199,7 @@ export default function About() {
                   </div>
                   <div
                     style={{
-                      fontSize: 14,
+                      fontSize: 16,
                       color: "var(--text)",
                       marginBottom: 6,
                       fontWeight: 500,
@@ -211,7 +211,7 @@ export default function About() {
                     {t.title}
                     <span
                       style={{
-                        fontSize: 10,
+                        fontSize: 12,
                         color: "var(--muted)",
                         transition: "transform 0.3s",
                         display: "inline-block",
